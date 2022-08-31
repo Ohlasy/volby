@@ -60,3 +60,10 @@ export async function getPlaylistItems(
     .then(decodeYTPlaylistResponse)
     .then((response) => response.items);
 }
+
+//
+// Utils
+//
+
+export const getVideoPermalink = (item: YTPlaylistItem) =>
+  `https://youtu.be/${item.snippet.resourceId.videoId}`;

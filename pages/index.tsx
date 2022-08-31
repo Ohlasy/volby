@@ -1,8 +1,12 @@
 import { shuffleInPlace } from "lib/utils";
-import { getPlaylistItems, YTPlaylistItem } from "lib/youtube";
 import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import {
+  getPlaylistItems,
+  getVideoPermalink,
+  YTPlaylistItem,
+} from "lib/youtube";
 
 export type PageProps = {
   videos: YTPlaylistItem[];
@@ -23,20 +27,34 @@ const Page: NextPage<PageProps> = ({ videos }) => {
   );
 };
 
-const Video = (video: YTPlaylistItem) => (
-  <div key={video.id} className="p-6 bg-white rounded-xl">
-    <LiteYouTubeEmbed
-      id={video.snippet.resourceId.videoId}
-      title={video.snippet.title}
-      poster="hqdefault"
-      noCookie={true}
-    />
-    <h2 className="text-2xl mt-6 text-gray-800 font-semibold mb-2">
-      {video.snippet.title}
-    </h2>
-    <p className="text-gray-600">{video.snippet.description}</p>
-  </div>
-);
+const Video = (video: YTPlaylistItem) => {
+  const permalink = getVideoPermalink(video);
+  const shortlink = permalink.replace("https://", "");
+  return (
+    <div key={video.id} className="p-6 bg-white rounded-xl">
+      <LiteYouTubeEmbed
+        id={video.snippet.resourceId.videoId}
+        title={video.snippet.title}
+        poster="hqdefault"
+        noCookie={true}
+      />
+      <h2 className="text-2xl mt-6 text-gray-800 font-semibold mb-2">
+        {video.snippet.title}
+      </h2>
+      <p className="text-gray-600">{video.snippet.description}</p>
+      <p className="text-xs mt-4">
+        <a
+          style={{ color: "rgb(148, 82, 0)" }}
+          href={permalink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {shortlink}
+        </a>
+      </p>
+    </div>
+  );
+};
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
   const { YOUTUBE_API_KEY = "" } = process.env;
