@@ -54,7 +54,7 @@ export async function getPlaylistItems(
   apiKey: string,
   playlistId: string
 ): Promise<YTPlaylistItem[]> {
-  const url = `${apiBase}/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}`;
+  const url = `${apiBase}/playlistItems?part=snippet&playlistId=${playlistId}&key=${apiKey}&maxResults=10`;
   return await fetch(url)
     .then((response) => response.json())
     .then(decodeYTPlaylistResponse)
