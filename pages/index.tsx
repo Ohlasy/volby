@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
   shuffleInPlace(videos);
   return {
     props: { videos },
+    revalidate: 300, // update every 5 minutes
   };
 };
 
