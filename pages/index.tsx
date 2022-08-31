@@ -16,7 +16,7 @@ const Page: NextPage<PageProps> = ({ videos }) => {
       </header>
       <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {videos.map((video) => (
-          <Video {...video} />
+          <Video {...video} key={video.id} />
         ))}
       </section>
     </div>
