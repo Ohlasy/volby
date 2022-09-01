@@ -46,6 +46,14 @@ Projekt má vlastní [dárcovskou výzvu na Darujme.cz](https://ohlasy.info/rozh
 
 Zřejmě ještě uspořádáme debatu volebních lídrů a debatu senátorských kandidátů (tedy dvě samostatné události). Pokud se podaří pořídit z nich záznam, budeme jej určitě chtít prezentovat tady na webu.
 
+### Patička
+
+* [Hlavní web Ohlasů](https://ohlasy.info)
+* [YouTube kanál](http://youtube.com/channel/UCylOefq0Efb-A452MlTuejw)
+* [Dárcovský projekt](http://ohlasy.info/darujme)
+* [Repo projektu](https://github.com/Ohlasy/volby)
+* ohlasy@ohlasy.info
+
 ## Časový rozvrh
 
 * Od čtvrtka 1. září budou na YouTube postupně naskakovat finální verze rozhovorů
