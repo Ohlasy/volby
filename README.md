@@ -38,11 +38,20 @@ TBD
 
 TBD
 
+### Dárcovský widget
+
+Projekt má vlastní [dárcovskou výzvu na Darujme.cz](https://ohlasy.info/rozhovory), na kterou upozorňujeme v každém rozhovoru, ale určitě ji chceme promovat i přímo tady na webu, ať už jednodušší formou tlačítka / odkazu, nebo složitější formou darovacího widgetu.
+
+### Debaty senátorů a lídrů
+
+Zřejmě ještě uspořádáme debatu volebních lídrů a debatu senátorských kandidátů (tedy dvě samostatné události). Pokud se podaří pořídit z nich záznam, budeme jej určitě chtít prezentovat tady na webu.
+
 ## Časový rozvrh
 
 * Od čtvrtka 1. září budou na YouTube postupně naskakovat finální verze rozhovorů
 * V pondělí 5. září spustíme verzi 1, kde musí být aspoň volební videa, zbytek obsahu podle možností
 * V týdnu od 5. září vyjdou rozhovory v podcastu Ohlasů, zřejmě najednou
+* V pondělí 19. září večer zřejmě proběhne námi pořádaná debata volebních lídrů
 * Volby jsou v pátek a sobotu 23. a 24. září, výsledky budou známy v sobotu
 
 Výhledově bude volební mikroweb integrován do hlavního webu Ohlasů, tedy volby.ohlasy.info → ohlasy.info/volby. (Momentálně je samostatný zejména z technických důvodů.)
