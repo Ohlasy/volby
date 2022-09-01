@@ -1,4 +1,4 @@
-# Komunální volby 2022
+# Komunální a senátní volby 2022
 
 ## Všechno, co potřebujete vědět, než půjdete volit™
 
