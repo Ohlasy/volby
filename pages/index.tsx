@@ -14,15 +14,17 @@ export type PageProps = {
 
 const Page: NextPage<PageProps> = ({ videos }) => {
   return (
-    <div className="bg-slate-100 p-5">
-      <header className="max-w-7xl m-auto">
-        <h1>Volební videa</h1>
-      </header>
-      <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        {videos.map((video) => (
-          <Video {...video} key={video.id} />
-        ))}
-      </section>
+    <div className="relative">
+      <div className="text-center bg-red-500 text-white p-2 w-full">
+        Tohle je testovací verze webu, nešířit, prosím.
+      </div>
+      <div className="bg-slate-100 p-5 pb-20">
+        <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {videos.map((video) => (
+            <Video {...video} key={video.id} />
+          ))}
+        </section>
+      </div>
     </div>
   );
 };
