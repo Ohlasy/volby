@@ -4,7 +4,7 @@
 
 Repository obsahuje mikroweb pro komunální volby 2022 na Boskovicku. Účelem webu je poskytnout voličům na jednom místě informace pro jejich rozhodování a podpořit je v rozhodnutí jít volit. K obojímu slouží především videorozhovory s lídry kandidátek a sekundárně též seznam textů, které k těmto volbám vyšly v Ohlasech v předchozích měsících.
 
-Technicky jde o statický web napsaný v [Next.js](https://nextjs.org) a hostovaný na [Vercelu](https://vercel.com/). Data se načítají z [YouTube playlistu](https://www.youtube.com/playlist?list=PLPvYKKWRSI7nAl7usr46TbUZ1_3lNyxnI) (volební videa) a [hlavního webu Ohlasů](https://ohlasy.info) (volební texty).
+Technicky jde o statický web napsaný v [Next.js](https://nextjs.org) a hostovaný na [Vercelu](https://vercel.com/). Data se načítají z [YouTube playlistu](https://www.youtube.com/playlist?list=PLPvYKKWRSI7nAl7usr46TbUZ1_3lNyxnI) (volební videa) a [hlavního webu Ohlasů](https://ohlasy.info) (volební texty). Obsah webu se automaticky obnoví (přegeneruje) každých pět minut.
 
 ## Videorozhovory
 
