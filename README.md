@@ -25,7 +25,9 @@ Technicky jde o statický web napsaný v [Next.js](https://nextjs.org) a hostova
 
 ### Poděkování sponzorům a týmu
 
-TBD
+* Hlavním sponzorem projektu volebních rozhovorů je firma [Gatema](https://www.gatema.cz), je potřeba zveřejnit též logo
+* Druhým hlavním sponzorem jsou čtenáři, kteří nás podpořili v [dlouhodobém dárcovském projektu](https://ohlasy.info/darujme) nebo ve speciální [volební dárcovské výzvě](https://ohlasy.info/rozhovory), poděkujme jim
+* Volební rozhovory pro vás připravili Tomáš Trumpeš (obsah a moderování), Tomáš Znamenáček (technika), Oto Matal (technika), Marek Osouch (korektury) a Robin Janásek (design)
 
 ### Praktické odkazy
 
@@ -36,7 +38,7 @@ TBD
 
 ### Volební výsledky
 
-TBD
+Po vyhlášení výsledků by bylo krásné je na webu prezentovat. Seznam věcí, které by mohly čtenáře zajímat, [je vidět v minulém diskuzním fóru](https://forum.ohlasy.info/t/komunalni-volby-2018/29/11). Zejména jde o procentuální výsledky, přepočet na mandáty, jména nových zastupitelů a rychlý přehled získaných / ztracených mandátů od minulých voleb.
 
 ### Podcast
 
