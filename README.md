@@ -38,6 +38,10 @@ TBD
 
 TBD
 
+### Podcast
+
+Rozhovory vyjdou i v našem podcastu, bylo by dobré na to nějak upozornit. Nevím, jestli dává smysl tady mít opět seznam všech rozhovorů ve formě audia, jestli není lepší odkázat přímo na podcast na různých platformách (Spotify, Google Podcasts, Apple Podcasts, …).
+
 ### Dárcovský widget
 
 Projekt má vlastní [dárcovskou výzvu na Darujme.cz](https://ohlasy.info/rozhovory), na kterou upozorňujeme v každém rozhovoru, ale určitě ji chceme promovat i přímo tady na webu, ať už jednodušší formou tlačítka / odkazu, nebo složitější formou darovacího widgetu.
