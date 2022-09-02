@@ -1,7 +1,6 @@
 import { shuffleInPlace } from "lib/utils";
 import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import { Layout } from "lib/Layout";
 import {
   getPlaylistItems,
