@@ -2,6 +2,7 @@ import { shuffleInPlace } from "lib/utils";
 import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import { Layout } from "lib/Layout";
 import {
   getPlaylistItems,
   getVideoPermalink,
@@ -14,18 +15,20 @@ export type PageProps = {
 
 const Page: NextPage<PageProps> = ({ videos }) => {
   return (
-    <div className="relative">
-      <div className="text-center bg-red-500 text-white p-2 w-full">
-        Tohle je testovací verze webu, nešířit, prosím.
+    <Layout>
+      <div className="relative">
+        <div className="text-center bg-red-500 text-white p-2 w-full">
+          Tohle je testovací verze webu, nešířit, prosím.
+        </div>
+        <div className="bg-slate-100 p-5 pb-20">
+          <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {videos.map((video) => (
+              <Video {...video} key={video.id} />
+            ))}
+          </section>
+        </div>
       </div>
-      <div className="bg-slate-100 p-5 pb-20">
-        <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-          {videos.map((video) => (
-            <Video {...video} key={video.id} />
-          ))}
-        </section>
-      </div>
-    </div>
+    </Layout>
   );
 };
 
