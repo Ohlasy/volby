@@ -13,24 +13,30 @@ export type PageProps = {
   videos: YTPlaylistItem[];
 };
 
-const Page: NextPage<PageProps> = ({ videos }) => {
+const Page: NextPage<PageProps> = (props) => {
   return (
     <Layout>
-      <div className="relative">
-        <div className="text-center bg-red-500 text-white p-2 w-full">
-          Tohle je testovací verze webu, nešířit, prosím.
-        </div>
-        <div className="bg-slate-100 p-5 pb-20">
-          <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {videos.map((video) => (
-              <Video {...video} key={video.id} />
-            ))}
-          </section>
-        </div>
-      </div>
+      <BetaBanner />
+      <VideoSection {...props} />
     </Layout>
   );
 };
+
+const BetaBanner = () => (
+  <div className="text-center bg-red-500 text-white p-2 w-full">
+    Tohle je testovací verze webu, nešířit, prosím.
+  </div>
+);
+
+const VideoSection = ({ videos }: PageProps) => (
+  <div className="bg-slate-100 p-5 pb-20">
+    <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+      {videos.map((video) => (
+        <Video {...video} key={video.id} />
+      ))}
+    </section>
+  </div>
+);
 
 const Video = (video: YTPlaylistItem) => {
   const permalink = getVideoPermalink(video);
