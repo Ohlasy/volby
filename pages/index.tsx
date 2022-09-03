@@ -3,6 +3,7 @@ import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { Layout } from "lib/Layout";
 import { Article, getAllArticles } from "lib/article";
+import { PropsWithChildren } from "react";
 import {
   getPlaylistItems,
   getVideoPermalink,
@@ -19,6 +20,7 @@ const Page: NextPage<PageProps> = (props) => {
     <Layout>
       <BetaBanner />
       <VideoSection {...props} />
+      <ArticleSection {...props} />
     </Layout>
   );
 };
@@ -31,11 +33,11 @@ const BetaBanner = () => (
 
 const VideoSection = ({ videos }: PageProps) => (
   <div className="bg-slate-100 p-5 pb-20">
-    <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    <Grid>
       {videos.map((video) => (
         <Video {...video} key={video.id} />
       ))}
-    </section>
+    </Grid>
   </div>
 );
 
@@ -43,16 +45,14 @@ const Video = (video: YTPlaylistItem) => {
   const permalink = getVideoPermalink(video);
   const shortlink = permalink.replace("https://", "");
   return (
-    <div key={video.id} className="p-6 bg-white rounded-xl">
+    <Card key={video.id}>
       <LiteYouTubeEmbed
         id={video.snippet.resourceId.videoId}
         title={video.snippet.title}
         poster="hqdefault"
         noCookie={true}
       />
-      <h2 className="text-2xl mt-6 text-gray-800 font-semibold mb-2">
-        {video.snippet.title}
-      </h2>
+      <Header>{video.snippet.title}</Header>
       <p className="text-gray-600">{video.snippet.description}</p>
       <p className="text-xs mt-4">
         <a
@@ -64,9 +64,54 @@ const Video = (video: YTPlaylistItem) => {
           {shortlink}
         </a>
       </p>
-    </div>
+    </Card>
   );
 };
+
+const ArticleSection = ({ articles }: PageProps) => (
+  <div className="bg-slate-300 p-5 pb-20 pt-20">
+    <Grid>
+      {articles.map((article) => (
+        <Article {...article} key={article.relativeURL} />
+      ))}
+    </Grid>
+  </div>
+);
+
+const Article = (article: Article) => {
+  return (
+    <Card>
+      <div className="aspect-video overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={article.coverPhoto!} alt="" />
+      </div>
+      <Header>{article.title}</Header>
+      <p className="text-gray-600">{article.perex}</p>
+    </Card>
+  );
+};
+
+//
+// Common Components
+//
+
+const Header = ({ children }: PropsWithChildren) => (
+  <h2 className="text-2xl mt-6 text-gray-800 font-semibold mb-2">{children}</h2>
+);
+
+const Card = ({ children }: PropsWithChildren) => (
+  <div className="p-6 bg-white rounded-xl drop-shadow">{children}</div>
+);
+
+const Grid = ({ children }: PropsWithChildren) => (
+  <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    {children}
+  </section>
+);
+
+//
+// Data Source
+//
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
   // Videos
