@@ -35,16 +35,8 @@ const BetaBanner = () => (
 );
 
 const Header = () => (
-  <header className="bg-peach p-4 py-6 pb-10 lg:min-h-[324px] relative">
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img
-      src="/erb.png"
-      width={491}
-      height={297}
-      alt=""
-      className="hidden lg:block absolute bottom-0 right-4"
-    />
-    <Content>
+  <header className="bg-peach p-4 pb-0">
+    <div className="max-w-6xl m-auto md:bg-[url(/erb.png)] bg-no-repeat bg-contain bg-right-bottom pt-6 pb-12">
       <Image src="/heading.svg" alt="Ohlasy volby 22" width={119} height={40} />
       <h1 className="text-4xl leading-normal font-bold my-3">
         Komunální a senátní volby <br className="hidden md:block" />
@@ -53,7 +45,7 @@ const Header = () => (
       <p className="text-xl">
         Všechno, co potřebujete vědět, než půjdete volit
       </p>
-    </Content>
+    </div>
   </header>
 );
 
@@ -150,13 +142,13 @@ const Footer = () => (
 //
 
 const Grid = ({ children }: PropsWithChildren) => (
-  <section className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+  <section className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
     {children}
   </section>
 );
 
 const Content = ({ children }: PropsWithChildren) => (
-  <div className="max-w-7xl m-auto">{children}</div>
+  <div className="max-w-6xl m-auto">{children}</div>
 );
 
 const FormattedDate = ({ date }: { date: Date }) => {
