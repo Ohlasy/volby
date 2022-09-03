@@ -144,8 +144,9 @@ const Footer = () => (
           />
           <p>
             Videorozhovory pro vás připravili Tomáš Trumpeš (obsah, moderování),
-            Tomáš Znamenáček (technika, střih, programování) a Oto Matal
-            (technika). Výrobu rozhovorů finančně podpořila firma{" "}
+            Tomáš Znamenáček (technika, střih, programování), Oto Matal
+            (technika), Marek Osouch (korektury) a Robin Janásek (to lepší
+            z designu tohoto webu). Výrobu rozhovorů finančně podpořila firma{" "}
             <a href="https://www.gatema.cz">Gatema</a> – děkujeme!
           </p>
         </div>
