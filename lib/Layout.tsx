@@ -19,6 +19,10 @@ export const Layout: React.FC<Props> = ({ children }) => {
         <meta charSet="utf-8" />
         <title>Komunální a senátní volby 2022</title>
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <meta
+          property="og:description"
+          content="Všechno, co potřebujete vědět, než půjdete v Boskovicích volit"
+        />
       </Head>
       {children}
     </div>
