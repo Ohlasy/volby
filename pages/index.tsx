@@ -125,7 +125,7 @@ const Footer = () => (
         </div>
         <ul className="mb-7">
           <li>
-            <a href="https://ohlasy.info">ohlasy.info</a>
+            <a href="https://ohlasy.info">www.ohlasy.info</a>
           </li>
           <li>
             <a href="mailto:ohlasy@ohlasy.info">ohlasy@ohlasy.info</a>
