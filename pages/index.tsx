@@ -79,6 +79,7 @@ const ArticleSection = ({ articles }: PageProps) => (
 );
 
 const Article = (article: Article) => {
+  const pubDate = new Date(article.pubDate);
   return (
     <Card>
       <div className="aspect-video overflow-hidden">
@@ -86,7 +87,10 @@ const Article = (article: Article) => {
         <img src={article.coverPhoto!} alt="" />
       </div>
       <Header>{article.title}</Header>
-      <p className="text-gray-600">{article.perex}</p>
+      <p className="text-gray-400 text-xs">
+        <FormattedDate date={pubDate} />
+      </p>
+      <p className="text-gray-600 mt-2">{article.perex}</p>
     </Card>
   );
 };
@@ -108,6 +112,11 @@ const Grid = ({ children }: PropsWithChildren) => (
     {children}
   </section>
 );
+
+const FormattedDate = ({ date }: { date: Date }) => {
+  const formatter = new Intl.DateTimeFormat("cs", { dateStyle: "long" });
+  return <span>{formatter.format(date)}</span>;
+};
 
 //
 // Data Source
