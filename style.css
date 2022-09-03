@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+
+body {
+  letter-spacing: 0.005em;
+}
+
+a {
+  text-decoration: underline;
+  color: #8b551b;
+}
+
+ul.bullets li:before {
+  content: "»";
+  margin-right: 0.7em;
+}
+
 /* react-lite-youtube-embed */
 
 .yt-lite {
