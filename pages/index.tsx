@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import { shuffleInPlace } from "lib/utils";
 import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { Layout } from "lib/Layout";
 import { Article, getAllArticles } from "lib/article";
 import { PropsWithChildren } from "react";
-import Image from "next/image";
 import {
   getPlaylistItems,
   getVideoPermalink,
@@ -37,7 +37,7 @@ const BetaBanner = () => (
 const Header = () => (
   <header className="bg-peach p-4 pb-0">
     <div className="max-w-6xl m-auto md:bg-[url(/erb.png)] bg-no-repeat bg-contain bg-right-bottom pt-6 pb-12">
-      <Image src="/heading.svg" alt="Ohlasy volby 22" width={119} height={40} />
+      <img src="/heading.svg" alt="Ohlasy volby 22" />
       <h1 className="text-4xl leading-normal font-bold my-3">
         Komunální a senátní volby <br className="hidden md:block" />
         v Boskovicích
@@ -117,22 +117,35 @@ const Article = (article: Article) => {
 };
 
 const Footer = () => (
-  <footer className="bg-peach min-h-[300px] p-5 py-10 mt-10 text-lg">
+  <footer className="bg-peach min-h-[300px] p-5 py-10 mt-10 text-body">
     <Content>
-      <Image src="/heading.svg" alt="Ohlasy volby 22" width={119} height={40} />
-      <ul className="mt-4 bullets">
-        <li>
-          <a href="https://ohlasy.info">ohlasy.info</a>
-        </li>
-        <li>
-          <a href="mailto:ohlasy@ohlasy.info">ohlasy@ohlasy.info</a>
-        </li>
-        <li>
-          <a href="http://youtube.com/channel/UCylOefq0Efb-A452MlTuejw">
-            YouTube
-          </a>
-        </li>
-      </ul>
+      <div className="lg:grid grid-cols-4 gap-6 gap-y-4 mt-4">
+        <div className="mb-5">
+          <img src="/heading.svg" alt="Ohlasy volby 22" />
+        </div>
+        <ul className="mb-7">
+          <li>
+            <a href="https://ohlasy.info">ohlasy.info</a>
+          </li>
+          <li>
+            <a href="mailto:ohlasy@ohlasy.info">ohlasy@ohlasy.info</a>
+          </li>
+          <li>
+            <a href="http://youtube.com/channel/UCylOefq0Efb-A452MlTuejw">
+              YouTube
+            </a>
+          </li>
+        </ul>
+        <div className="col-span-2 text-gray mb-5">
+          <img className="w-[150px] mb-5" src="/gatema.png" alt="" />
+          <p className="lg:mb-0">
+            Videorozhovory pro vás připravili Tomáš Trumpeš (obsah, moderování),
+            Tomáš Znamenáček (technika, střih, programování) a Oto Matal
+            (technika). Výrobu rozhovorů finančně podpořila firma{" "}
+            <a href="https://www.gatema.cz">Gatema</a> – děkujeme!
+          </p>
+        </div>
+      </div>
     </Content>
   </footer>
 );
