@@ -137,8 +137,8 @@ const Footer = () => (
           </li>
         </ul>
         <div className="col-span-2 text-gray mb-5">
-          <img className="w-[150px] mb-5" src="/gatema.png" alt="" />
-          <p className="lg:mb-0">
+          <div className="h-[32px] bg-[url(/gatema.png)] bg-no-repeat bg-contain mb-5" />
+          <p>
             Videorozhovory pro vás připravili Tomáš Trumpeš (obsah, moderování),
             Tomáš Znamenáček (technika, střih, programování) a Oto Matal
             (technika). Výrobu rozhovorů finančně podpořila firma{" "}
