@@ -2,6 +2,7 @@ import { shuffleInPlace } from "lib/utils";
 import { GetStaticProps, NextPage } from "next";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { Layout } from "lib/Layout";
+import { Article, getAllArticles } from "lib/article";
 import {
   getPlaylistItems,
   getVideoPermalink,
@@ -10,6 +11,7 @@ import {
 
 export type PageProps = {
   videos: YTPlaylistItem[];
+  articles: Article[];
 };
 
 const Page: NextPage<PageProps> = (props) => {
@@ -67,12 +69,23 @@ const Video = (video: YTPlaylistItem) => {
 };
 
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
+  // Videos
   const { YOUTUBE_API_KEY = "" } = process.env;
   const playlistId = "PLPvYKKWRSI7nAl7usr46TbUZ1_3lNyxnI";
   const videos = await getPlaylistItems(YOUTUBE_API_KEY, playlistId);
   shuffleInPlace(videos);
+
+  // Articles
+  const isElectionArticle = (a: Article) =>
+    a.tags.some((t) => t === "volby 2022");
+  const articles = await getAllArticles().then((list) =>
+    list.filter(isElectionArticle)
+  );
+
+  console.info(`Loaded ${videos.length} videos, ${articles.length} articles.`);
+
   return {
-    props: { videos },
+    props: { videos, articles },
     revalidate: 300, // update every 5 minutes
   };
 };
