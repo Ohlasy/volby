@@ -23,6 +23,10 @@ export const Layout: React.FC<Props> = ({ children }) => {
           property="og:description"
           content="Všechno, co potřebujete vědět, než půjdete v Boskovicích volit"
         />
+        <meta
+          property="og:image"
+          content="https://volby.ohlasy.info/cover.png"
+        />
       </Head>
       {children}
     </div>
