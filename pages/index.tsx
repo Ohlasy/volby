@@ -38,7 +38,7 @@ const Header = () => (
   <header className="bg-peach p-4 pb-0">
     <div className="max-w-6xl m-auto md:bg-[url(/erb.png)] bg-no-repeat bg-contain bg-right-bottom pt-6 pb-12">
       <img src="/heading.svg" alt="Ohlasy volby 22" />
-      <h1 className="text-4xl leading-normal font-bold my-3">
+      <h1 className="text-4xl leading-[2.8rem] font-bold my-5">
         Komunální a senátní volby <br className="hidden md:block" />
         v Boskovicích
       </h1>
