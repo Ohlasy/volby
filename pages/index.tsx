@@ -5,6 +5,7 @@ import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { Layout } from "lib/Layout";
 import { Article, getAllArticles } from "lib/article";
 import { PropsWithChildren } from "react";
+import Script from "next/script";
 import {
   getPlaylistItems,
   getVideoPermalink,
@@ -21,6 +22,7 @@ const Page: NextPage<PageProps> = (props) => {
     <Layout>
       <Header />
       <VideoSection {...props} />
+      <FundraisingSecion />
       <ArticleSection {...props} />
       <Footer />
     </Layout>
@@ -43,9 +45,9 @@ const Header = () => (
 );
 
 const VideoSection = ({ videos }: PageProps) => (
-  <div className="bg-white p-5 md:border-b border-lightGray md:mb-10">
+  <div className="bg-white px-5 py-12 border-b border-lightGray">
     <Content>
-      <h2 className="font-bold text-3xl py-6">Rozhovory a články</h2>
+      <h2 className="font-bold text-3xl pb-6">Rozhovory a články</h2>
       <Grid>
         {videos.map((video) => (
           <Video {...video} key={video.id} />
@@ -59,7 +61,7 @@ const Video = (video: YTPlaylistItem) => {
   const permalink = getVideoPermalink(video);
   const shortlink = permalink.replace("https://", "");
   return (
-    <div className="pb-6 mb-3 border-b border-lightGray border-dotted md:border-none">
+    <div className="pb-6 last:pb-0 mb-3 last:mb-0 border-b border-lightGray border-dotted md:border-none last:border-none">
       <div className="-mx-5 md:m-0">
         <LiteYouTubeEmbed
           id={video.snippet.resourceId.videoId}
@@ -79,8 +81,31 @@ const Video = (video: YTPlaylistItem) => {
   );
 };
 
+const FundraisingSecion = () => (
+  <div className="bg-white px-5 py-12 border-b border-lightGray">
+    <Content>
+      <Grid>
+        <img src="/tym.jpeg" alt="" className="xl:col-span-2" />
+        <div data-darujme-widget-token="5cfak3j2zmvvsxns">&nbsp;</div>
+        <Script id="darujme">
+          {`
+          +function(w, d, s, u, a, b) {
+            w["DarujmeObject"] = u;
+            w[u] = w[u] || function () { (w[u].q = w[u].q || []).push(arguments) };
+            a = d.createElement(s); b = d.getElementsByTagName(s)[0];
+            a.async = 1; a.src = "https:\/\/www.darujme.cz\/assets\/scripts\/widget.js";
+            b.parentNode.insertBefore(a, b);
+          }(window, document, "script", "Darujme");
+          Darujme(1, "5cfak3j2zmvvsxns", "render", "https:\/\/www.darujme.cz\/widget?token=5cfak3j2zmvvsxns", "100%");
+          `}
+        </Script>
+      </Grid>
+    </Content>
+  </div>
+);
+
 const ArticleSection = ({ articles }: PageProps) => (
-  <div className="bg-white p-5 pt-1">
+  <div className="bg-white p-5 py-10">
     <Content>
       <Grid>
         {articles.map((article) => (
