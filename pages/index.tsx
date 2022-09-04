@@ -20,19 +20,12 @@ const Page: NextPage<PageProps> = (props) => {
   return (
     <Layout>
       <Header />
-      <BetaBanner />
       <VideoSection {...props} />
       <ArticleSection {...props} />
       <Footer />
     </Layout>
   );
 };
-
-const BetaBanner = () => (
-  <div className="bg-lightBrown text-white px-4 py-2 lg:text-center">
-    <Content>⚠️ Testovací verze webu, nešířit, prosím.</Content>
-  </div>
-);
 
 const Header = () => (
   <header className="bg-peach p-4 pb-0">
@@ -134,6 +127,9 @@ const Footer = () => (
             <a href="http://youtube.com/channel/UCylOefq0Efb-A452MlTuejw">
               YouTube
             </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/ohlasy">Facebook</a>
           </li>
         </ul>
         <div className="col-span-2 text-gray mb-5">
