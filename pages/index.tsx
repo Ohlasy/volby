@@ -156,6 +156,9 @@ const Footer = () => (
           <li>
             <a href="https://www.facebook.com/ohlasy">Facebook</a>
           </li>
+          <li>
+            <a href="https://github.com/Ohlasy/volby">GitHub</a>
+          </li>
         </ul>
         <div className="col-span-2 text-gray mb-5">
           <img
