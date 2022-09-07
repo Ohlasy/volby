@@ -145,7 +145,7 @@ const Footer = () => (
           <li>
             <a href="https://ohlasy.info">www.ohlasy.info</a>
           </li>
-          <li>
+          <li className="mb-5">
             <a href="mailto:ohlasy@ohlasy.info">ohlasy@ohlasy.info</a>
           </li>
           <li>
