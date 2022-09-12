@@ -27,6 +27,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
           property="og:image"
           content="https://volby.ohlasy.info/cover.png"
         />
+        <meta name="theme-color" content="#FDEAE1"></meta>
       </Head>
       {children}
     </div>
