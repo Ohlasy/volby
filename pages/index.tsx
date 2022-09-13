@@ -61,9 +61,9 @@ const CalculatorSection = () => (
           </p>
         </div>
         <iframe
-          src="https://www.volebnikalkulacka.cz/volby/senatni-2022/49-blansko/otazka/1?embed=seznam-zpravy"
+          src="https://www.volebnikalkulacka.cz/volby/senatni-2022/49-blansko/navod?embed=seznam-zpravy"
           width="100%"
-          className="h-[700px] md:col-span-2"
+          className="h-[550px] md:col-span-2"
         ></iframe>
       </div>
     </div>
