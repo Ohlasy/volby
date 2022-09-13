@@ -37,7 +37,9 @@ const CalculatorSection = () => (
         <div className="md:pr-4">
           <h2 className="font-bold text-3xl pb-6">Senátní kalkulačka</h2>
           <p className="mb-5">
-            Vyzkoušejte si, se kterým z kandidátů do senátu se nejvíc shodnete!
+            Současně s komunálními volbami se v našem obvodu letos konají i
+            senátní volby. Vyzkoušejte si, se kterým z kandidátů do senátu se
+            nejvíc shodnete!
           </p>
           <p className="mb-5">
             Za obvod Blansko kandidují Jiří Rokos (SPD), Martin Sklář
