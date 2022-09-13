@@ -23,11 +23,50 @@ const Page: NextPage<PageProps> = (props) => {
       <Header />
       <VideoSection {...props} />
       <FundraisingSecion />
+      <CalculatorSection />
       <ArticleSection {...props} />
       <Footer />
     </Layout>
   );
 };
+
+const CalculatorSection = () => (
+  <div className=" bg-peach px-5">
+    <div className="max-w-6xl m-auto py-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:pr-4">
+          <h2 className="font-bold text-3xl pb-6">Senátní kalkulačka</h2>
+          <p className="mb-5">
+            Vyzkoušejte si, se kterým z kandidátů do senátu se nejvíc shodnete!
+          </p>
+          <p className="mb-5">
+            Za obvod Blansko kandidují Jiří Rokos (SPD), Martin Sklář
+            (Soukromníci), Drago Sukalovský (STAN), Filip Vítek (Piráti),
+            Jaromíra Vítková (KDU+ODS+TOP 09, stávající senátorka), Zdeněk
+            Wetter (ČSSD) a Antonín Žirovnický (ANO).
+          </p>
+          <p>
+            Více se o kandidátech můžete dočíst v našich dvou textech: na konci
+            května jsme představili pětici{" "}
+            <a href="https://ohlasy.info/clanky/2022/06/senatori.html">
+              Vítková, Sukalovský, Vítek, Wetter a Rokos
+            </a>
+            ; v srpnu pak přibyli{" "}
+            <a href="https://ohlasy.info/clanky/2022/08/senatori.html">
+              Antonín Žirovnický a Martin Sklář
+            </a>
+            .
+          </p>
+        </div>
+        <iframe
+          src="https://www.volebnikalkulacka.cz/volby/senatni-2022/49-blansko/otazka/1?embed=seznam-zpravy"
+          width="100%"
+          className="h-[700px] md:col-span-2"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+);
 
 const Header = () => (
   <header className="bg-peach p-4 pb-0">
@@ -82,7 +121,7 @@ const Video = (video: YTPlaylistItem) => {
 };
 
 const FundraisingSecion = () => (
-  <div className="bg-white px-5 py-12 border-b border-lightGray">
+  <div className="bg-white px-5 py-12">
     <Content>
       <Grid>
         <img src="/tym.jpeg" alt="" className="xl:col-span-2" />
