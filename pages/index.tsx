@@ -159,7 +159,10 @@ const Article = (article: Article) => {
         <FormattedDate date={pubDate} />
       </p>
       <p className="text-gray pt-1 hidden md:block">
-        <FormattedDate date={pubDate} /> • {article.perex}
+        <span className="italic">
+          <FormattedDate date={pubDate} />
+        </span>{" "}
+        – {article.perex}
       </p>
     </div>
   );
