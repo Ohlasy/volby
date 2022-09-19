@@ -22,7 +22,7 @@ const Page: NextPage<PageProps> = (props) => {
     <Layout>
       <Header />
       <VideoSection {...props} />
-      <CalculatorSection />
+      <SenateSection />
       <ArticleSection {...props} />
       <FundraisingSecion />
       <Footer />
@@ -90,22 +90,52 @@ const Video = (video: YTPlaylistItem) => {
 // Senate Elections
 //
 
-const CalculatorSection = () => (
+const SenateSection = () => (
   <div className=" bg-peach px-5">
     <div className="max-w-6xl m-auto py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:pr-4">
-          <h2 className="font-bold text-3xl pb-6">Senátní kalkulačka</h2>
+      <h2 className="font-bold text-3xl pb-6">Senátní debata a kalkulačka</h2>
+      {/* Senate Debate */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div>
           <p className="mb-5">
             Současně s komunálními volbami se v našem obvodu letos konají i
-            senátní volby. Vyzkoušejte si, se kterým z kandidátů do senátu se
-            nejvíc shodnete!
+            senátní volby.
           </p>
           <p className="mb-5">
             Za obvod Blansko kandidují Jiří Rokos (SPD), Martin Sklář
             (Soukromníci), Drago Sukalovský (STAN), Filip Vítek (Piráti),
-            Jaromíra Vítková (KDU+ODS+TOP 09, stávající senátorka), Zdeněk
+            Jaromíra Vítková (KDU + ODS + TOP 09, stávající senátorka), Zdeněk
             Wetter (ČSSD) a Antonín Žirovnický (ANO).
+          </p>
+          <p>
+            Draga Sukalovského, Filipa Vítka, Jaromíru Vítkovou, Zdeňka Wettera
+            a Antonína Žirovnického jsme pozvali na živou senátorskou debatu,
+            jejíž zvukový záznam si zde můžete poslechnout. (Drago Sukalovský
+            nakonec bohužel ze zdravotních důvodů nedorazil.)
+          </p>
+        </div>
+        <div className="col-span-2">
+          <iframe
+            src="https://open.spotify.com/embed/episode/1s3TboJAo2buIoENhmf2vp"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      {/* Senate Calculator */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:pr-4">
+          <p className="mb-5">
+            Všichni senátorští kandidáti odpověděli na otázky{" "}
+            <a href="https://www.volebnikalkulacka.cz">Volební kalkulačky</a>,
+            takže si zde můžete snadno vyzkoušet, se kterým se nejvíce shodnete.
+            (Volební kalkulačku pro vás připravilo sdružení{" "}
+            <a href="https://kohovolit.eu">KohoVolit.eu</a> s pomocí{" "}
+            <a href="https://cesko.digital">Česko.Digital</a>.)
           </p>
           <p>
             Více se o kandidátech můžete dočíst v našich dvou textech: na konci
