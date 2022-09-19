@@ -22,13 +22,73 @@ const Page: NextPage<PageProps> = (props) => {
     <Layout>
       <Header />
       <VideoSection {...props} />
-      <FundraisingSecion />
       <CalculatorSection />
       <ArticleSection {...props} />
+      <FundraisingSecion />
       <Footer />
     </Layout>
   );
 };
+
+const Header = () => (
+  <header className="bg-peach p-4 pb-0">
+    <div className="max-w-6xl m-auto md:bg-[url(/erb.png)] bg-no-repeat bg-contain bg-right-bottom pt-6 pb-12">
+      <img src="/heading.svg" alt="Ohlasy volby 22" />
+      <h1 className="text-4xl leading-[2.8rem] font-bold my-5">
+        Komunální a senátní volby <br className="hidden md:block" />
+        v Boskovicích
+      </h1>
+      <p className="text-xl">
+        Všechno, co potřebujete vědět, než půjdete volit
+      </p>
+    </div>
+  </header>
+);
+
+//
+// Videos
+//
+
+const VideoSection = ({ videos }: PageProps) => (
+  <div className="bg-white px-5 py-12">
+    <Content>
+      <h2 className="font-bold text-3xl pb-6">Rozhovory s komunálními lídry</h2>
+      <Grid>
+        {videos.map((video) => (
+          <Video {...video} key={video.id} />
+        ))}
+      </Grid>
+    </Content>
+  </div>
+);
+
+const Video = (video: YTPlaylistItem) => {
+  const permalink = getVideoPermalink(video);
+  const shortlink = permalink.replace("https://", "");
+  return (
+    <div className="pb-6 last:pb-0 mb-3 last:mb-0 border-b border-lightGray border-dotted md:border-none last:border-none">
+      <div className="-mx-5 md:m-0">
+        <LiteYouTubeEmbed
+          id={video.snippet.resourceId.videoId}
+          title={video.snippet.title}
+          poster="hqdefault"
+          noCookie={true}
+        />
+      </div>
+      <h3 className="text-2xl font-bold py-4 pt-5">{video.snippet.title}</h3>
+      <p className="text-lg leading-relaxed">{video.snippet.description}</p>
+      <p className="text-lg mt-4">
+        <a href={permalink} target="_blank" rel="noreferrer">
+          {shortlink}
+        </a>
+      </p>
+    </div>
+  );
+};
+
+//
+// Senate Elections
+//
 
 const CalculatorSection = () => (
   <div className=" bg-peach px-5">
@@ -70,84 +130,14 @@ const CalculatorSection = () => (
   </div>
 );
 
-const Header = () => (
-  <header className="bg-peach p-4 pb-0">
-    <div className="max-w-6xl m-auto md:bg-[url(/erb.png)] bg-no-repeat bg-contain bg-right-bottom pt-6 pb-12">
-      <img src="/heading.svg" alt="Ohlasy volby 22" />
-      <h1 className="text-4xl leading-[2.8rem] font-bold my-5">
-        Komunální a senátní volby <br className="hidden md:block" />
-        v Boskovicích
-      </h1>
-      <p className="text-xl">
-        Všechno, co potřebujete vědět, než půjdete volit
-      </p>
-    </div>
-  </header>
-);
-
-const VideoSection = ({ videos }: PageProps) => (
-  <div className="bg-white px-5 py-12 border-b border-lightGray">
-    <Content>
-      <h2 className="font-bold text-3xl pb-6">Rozhovory a články</h2>
-      <Grid>
-        {videos.map((video) => (
-          <Video {...video} key={video.id} />
-        ))}
-      </Grid>
-    </Content>
-  </div>
-);
-
-const Video = (video: YTPlaylistItem) => {
-  const permalink = getVideoPermalink(video);
-  const shortlink = permalink.replace("https://", "");
-  return (
-    <div className="pb-6 last:pb-0 mb-3 last:mb-0 border-b border-lightGray border-dotted md:border-none last:border-none">
-      <div className="-mx-5 md:m-0">
-        <LiteYouTubeEmbed
-          id={video.snippet.resourceId.videoId}
-          title={video.snippet.title}
-          poster="hqdefault"
-          noCookie={true}
-        />
-      </div>
-      <h3 className="text-2xl font-bold py-4 pt-5">{video.snippet.title}</h3>
-      <p className="text-lg leading-relaxed">{video.snippet.description}</p>
-      <p className="text-lg mt-4">
-        <a href={permalink} target="_blank" rel="noreferrer">
-          {shortlink}
-        </a>
-      </p>
-    </div>
-  );
-};
-
-const FundraisingSecion = () => (
-  <div className="bg-white px-5 py-12">
-    <Content>
-      <Grid>
-        <img src="/tym.jpeg" alt="" className="xl:col-span-2" />
-        <div data-darujme-widget-token="5cfak3j2zmvvsxns">&nbsp;</div>
-        <Script id="darujme">
-          {`
-          +function(w, d, s, u, a, b) {
-            w["DarujmeObject"] = u;
-            w[u] = w[u] || function () { (w[u].q = w[u].q || []).push(arguments) };
-            a = d.createElement(s); b = d.getElementsByTagName(s)[0];
-            a.async = 1; a.src = "https:\/\/www.darujme.cz\/assets\/scripts\/widget.js";
-            b.parentNode.insertBefore(a, b);
-          }(window, document, "script", "Darujme");
-          Darujme(1, "5cfak3j2zmvvsxns", "render", "https:\/\/www.darujme.cz\/widget?token=5cfak3j2zmvvsxns", "100%");
-          `}
-        </Script>
-      </Grid>
-    </Content>
-  </div>
-);
+//
+// Articles
+//
 
 const ArticleSection = ({ articles }: PageProps) => (
-  <div className="bg-white p-5 py-10">
+  <div className="bg-white p-5 py-10 border-b border-lightGray">
     <Content>
+      <h2 className="font-bold text-3xl pb-6">Přečtěte si víc</h2>
       <Grid>
         {articles.map((article) => (
           <Article {...article} key={article.relativeURL} />
@@ -174,6 +164,34 @@ const Article = (article: Article) => {
     </div>
   );
 };
+
+//
+// Fundraising & Footer
+//
+
+const FundraisingSecion = () => (
+  <div className="bg-white px-5 py-12">
+    <Content>
+      <h2 className="font-bold text-3xl pb-6">Líbilo se? Podpořte nás!</h2>
+      <Grid>
+        <img src="/tym.jpeg" alt="" className="xl:col-span-2" />
+        <div data-darujme-widget-token="5cfak3j2zmvvsxns">&nbsp;</div>
+        <Script id="darujme">
+          {`
+          +function(w, d, s, u, a, b) {
+            w["DarujmeObject"] = u;
+            w[u] = w[u] || function () { (w[u].q = w[u].q || []).push(arguments) };
+            a = d.createElement(s); b = d.getElementsByTagName(s)[0];
+            a.async = 1; a.src = "https:\/\/www.darujme.cz\/assets\/scripts\/widget.js";
+            b.parentNode.insertBefore(a, b);
+          }(window, document, "script", "Darujme");
+          Darujme(1, "5cfak3j2zmvvsxns", "render", "https:\/\/www.darujme.cz\/widget?token=5cfak3j2zmvvsxns", "100%");
+          `}
+        </Script>
+      </Grid>
+    </Content>
+  </div>
+);
 
 const Footer = () => (
   <footer className="bg-peach min-h-[300px] p-5 py-10 mt-10 text-body">
