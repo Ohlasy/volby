@@ -66,7 +66,7 @@ Zřejmě ještě uspořádáme debatu volebních lídrů a debatu senátorských
 * [x] V pondělí 5. září spustíme verzi 1, kde musí být aspoň volební videa, zbytek obsahu podle možností
 * [x] V týdnu od 12. září vyjdou rozhovory v podcastu Ohlasů, zřejmě najednou
 * [x] Ve středu 14. září večer proběhne námi pořádaná debata senátorských kandidátů
-* [ ] V pondělí 19. září večer proběhne námi pořádaná debata volebních lídrů
+* [x] V pondělí 19. září večer proběhne námi pořádaná debata volebních lídrů
 * [ ] Volby jsou v pátek a sobotu 23. a 24. září, výsledky budou známy v sobotu
 
 Výhledově bude volební mikroweb integrován do hlavního webu Ohlasů, tedy volby.ohlasy.info → ohlasy.info/volby. (Momentálně je samostatný zejména z technických důvodů.)
