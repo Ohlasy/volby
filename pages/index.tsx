@@ -91,11 +91,17 @@ const Video = (video: YTPlaylistItem) => {
 //
 
 const SenateSection = () => (
-  <div className=" bg-peach px-5">
+  <>
+    <SenateDebate />
+    <SenateCalculator />
+  </>
+);
+
+const SenateDebate = () => (
+  <div className=" bg-peach px-5 border-b border-1 border-white">
     <div className="max-w-6xl m-auto py-12">
-      <h2 className="font-bold text-3xl pb-6">Senátní debata a kalkulačka</h2>
-      {/* Senate Debate */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <h2 className="font-bold text-3xl pb-6">Senátní volby</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           <p className="mb-5">
             Současně s komunálními volbami se v našem obvodu letos konají i
@@ -126,9 +132,16 @@ const SenateSection = () => (
           ></iframe>
         </div>
       </div>
-      {/* Senate Calculator */}
+    </div>
+  </div>
+);
+
+const SenateCalculator = () => (
+  <div className=" bg-peach px-5">
+    <div className="max-w-6xl m-auto py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:pr-4">
+          <h2 className="font-bold text-3xl pb-6">Senátní kalkulačka</h2>
           <p className="mb-5">
             Všichni senátorští kandidáti odpověděli na otázky{" "}
             <a href="https://www.volebnikalkulacka.cz">Volební kalkulačky</a>,
