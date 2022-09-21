@@ -58,6 +58,7 @@ const VideoSection = ({ videos }: PageProps) => (
         {videos.map((video) => (
           <Video {...video} key={video.id} />
         ))}
+        <PodcastBox />
       </Grid>
     </Content>
   </div>
@@ -86,6 +87,37 @@ const Video = (video: YTPlaylistItem) => {
     </div>
   );
 };
+
+const PodcastBox = () => (
+  <div className="bg-[#eee] -mx-5 md:m-0">
+    <div className="aspect-video overflow-hidden bg-[#3B4351]">
+      <img
+        src="https://i.ohlasy.info/i/waibo6c.png"
+        className="h-full m-auto"
+        alt="Ohlasy Podcast"
+      />
+    </div>
+    <div className="px-5 pb-10">
+      <h3 className="text-2xl font-bold py-4 pt-5">Raději posloucháte?</h3>
+      <p className="text-lg">
+        Všechny volební rozhovory i debaty si můžete poslechnout v našem
+        podcastu na všech běžných platformách, například{" "}
+        <a href="https://open.spotify.com/show/5WSL7RX8M7vaL7HQ1uUj10">
+          Spotify
+        </a>
+        ,{" "}
+        <a href="https://podcasts.apple.com/cz/podcast/ohlasy-podcast/id1480020344">
+          Apple Podcasts
+        </a>{" "}
+        nebo{" "}
+        <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9vaGxhc3kuaW5mby9wb2RjYXN0LnhtbA">
+          Google Podcasts
+        </a>
+        .
+      </p>
+    </div>
+  </div>
+);
 
 //
 // Mayor Debate
