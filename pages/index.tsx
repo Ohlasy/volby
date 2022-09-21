@@ -311,10 +311,10 @@ const Footer = () => (
           <p>
             Tento web pro vás připravili Tomáš Trumpeš (obsah, moderování),
             Tomáš Znamenáček (technika, střih, programování), Oto Matal
-            (technika), Marek Osouch (korektury) a Robin Janásek (to lepší
-            z designu tohoto webu). Výrobu rozhovorů s lídry stran finančně
-            podpořila firma <a href="https://www.gatema.cz">Gatema</a> –
-            děkujeme!
+            (technika), Magdalena Zindulková (technika, střih), Marek Osouch
+            (korektury) a Robin Janásek (to lepší z designu tohoto webu). Výrobu
+            rozhovorů s lídry stran finančně podpořila firma{" "}
+            <a href="https://www.gatema.cz">Gatema</a> – děkujeme!
           </p>
         </div>
       </div>
