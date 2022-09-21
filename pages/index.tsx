@@ -22,6 +22,7 @@ const Page: NextPage<PageProps> = (props) => {
     <Layout>
       <Header />
       <VideoSection {...props} />
+      <MayorDebate />
       <SenateSection />
       <ArticleSection {...props} />
       <FundraisingSecion />
@@ -50,7 +51,7 @@ const Header = () => (
 //
 
 const VideoSection = ({ videos }: PageProps) => (
-  <div className="bg-white px-5 py-12">
+  <div className="bg-white px-5 py-12 border-b border-lightGray">
     <Content>
       <h2 className="font-bold text-3xl pb-6">Rozhovory s komunálními lídry</h2>
       <Grid>
@@ -85,6 +86,42 @@ const Video = (video: YTPlaylistItem) => {
     </div>
   );
 };
+
+//
+// Mayor Debate
+//
+
+const MayorDebate = () => (
+  <div className="bg-white px-5 py-12">
+    <Content>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div>
+          <h2 className="font-bold text-3xl pb-6">
+            Debata s kandidáty na starost(k)u
+          </h2>
+          <p className="text-lg">
+            K debatě před komunálními volbami Ohlasy pozvaly pět lídrů, kteří se
+            deklarují jako kandidáti na starost(k)u Boskovic. Diskutovali
+            Michaela Žejšková (SPOLU), Petr Malach (ČSSD), Lukáš Holík (Naše
+            Boskovice), Radek Šamšula (Piráti) a Jana Syrovátková (Změna22).
+            Hlavním tématem debaty bylo samotné fungování boskovické komunální
+            politiky a politiky vůbec. Jak ji vnímají hlavní političtí hráči z
+            nastupující generace? (Omlouváme se za horší kvalitu zvuku v první
+            části záznamu.)
+          </p>
+        </div>
+        <div className="col-span-2">
+          <LiteYouTubeEmbed
+            id="KwIXt-nOF6w"
+            title="Ohlasy naživo: Kandidáti na starost(k)u"
+            poster="hqdefault"
+            noCookie={true}
+          />
+        </div>
+      </div>
+    </Content>
+  </div>
+);
 
 //
 // Senate Elections
