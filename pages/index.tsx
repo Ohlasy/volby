@@ -21,6 +21,7 @@ const Page: NextPage<PageProps> = (props) => {
   return (
     <Layout>
       <Header />
+      <Results />
       <VideoSection {...props} />
       <MayorDebate />
       <SenateSection />
@@ -40,10 +41,102 @@ const Header = () => (
         v Boskovicích
       </h1>
       <p className="text-xl">
-        Všechno, co potřebujete vědět, než půjdete volit
+        Všechno, co potřebujete vědět,{" "}
+        <span className="line-through">než půjdete</span> i když už jste byli
+        volit
       </p>
     </div>
   </header>
+);
+
+//
+// Results
+//
+
+const Results = () => (
+  <div className="bg-white px-5 py-12 border-b border-lightGray">
+    <Content>
+      <h2 className="font-bold text-3xl pb-6">
+        Jak to dopadlo? Boskovice si zvolily Změnu. A Naše Boskovice
+      </h2>
+      <MunicipalityResults />
+      <SenateResults />
+    </Content>
+  </div>
+);
+
+const MunicipalityResults = () => (
+  <section className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    <div className="text-lg col-span-1 md:col-span-2 lg:col-span-1 lg:pr-4">
+      <p className="italic mb-3">
+        Volby v Boskovicích skončily velmi těsným výsledkem. Vyhrálo je nakonec
+        nové uskupení Změna22, které vede architektka Jana Syrovátková. Jen
+        velmi těsně je následují Naše Boskovice vedené Lukášem Holíkem. Propadla
+        koalice SPOLU, která aktuálně Boskovicím vládla a byla favoritem voleb.
+        Udrželi se sociální demokraté a mírně oslabili Piráti. Mandát nakonec
+        získala i SPD a Trikolora.
+      </p>
+
+      <p>
+        Rozdíl mezi oběma uskupeními na prvních dvou příčkách činí něco přes osm
+        set hlasů, což představuje asi 30 lidí. V komunálních volbách má každý
+        volič v Boskovicích 27 hlasů. Změna22 i Naše Boskovice získaly po sedmi
+        mandátech, šest mandátů má koalice SPOLU, čtyři obhájili sociální
+        demokraté, dva mandáty mají Piráti a jeden má nakonec i uskupení SPD a
+        Trikolora, které sice nedosáhlo na 5 procent hlasů, ale vzhledem ke
+        sníženému počtu kandidátů se mu snížilo podle zákona i povinné kvórum.
+        Voliči odmítli v novém zastupitelstvu účast komunistů, STANu, Boskováků
+        a Cesty K-lidem.
+      </p>
+    </div>
+    <div className="p-5 bg-[#eee]">
+      <iframe
+        title="Celkové výsledky voleb"
+        aria-label="TBD"
+        src="https://datawrapper.dwcdn.net/u4hJ6/1/"
+        scrolling="no"
+        width="100%"
+        height="400"
+      ></iframe>
+    </div>
+    <div className="p-5 bg-[#eee]">
+      <iframe
+        title="Získané mandáty"
+        aria-label="TBD"
+        src="https://datawrapper.dwcdn.net/edUX2/2/"
+        scrolling="no"
+        width="100%"
+        height="500"
+      ></iframe>
+    </div>
+  </section>
+);
+
+const SenateResults = () => (
+  <section className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="text-lg lg:pr-4">
+      <p>
+        Druhé kolo <b>senátních voleb</b> bude na Blanensku nakonec nejlépe
+        odpovídat tomu, že se do nich promítá především celostátní politika.
+        Postupuje tedy Jaromíra Vítková z nejsilnějšího vládního uskupení SPOLU
+        a Antonín Žirovnický z nejsilnějšího opozičního subjektu ANO 2011. Druhé
+        kolo voleb proběhne v pátek 30. září a v sobotu 1. října. Jaromíra
+        Vítková získala v prvním kole cca 30 procent hlasů, Antonín Žirovnický
+        18 procent. Sčítání hlasů neprobíhalo nijak dramaticky, oba postupující
+        vedli prakticky od sečtení prvních okrsků.
+      </p>
+    </div>
+    <div className="p-5 bg-[#eee] lg:col-span-2">
+      <iframe
+        title="Celkové výsledky voleb"
+        aria-label="TBD"
+        src="https://datawrapper.dwcdn.net/74oyd/2/"
+        scrolling="no"
+        width="100%"
+        height="300"
+      ></iframe>
+    </div>
+  </section>
 );
 
 //
