@@ -114,11 +114,13 @@ const SenateResults = () => (
   <section className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div className="text-lg lg:pr-4">
       <p>
-        Druhé kolo <b>senátních voleb</b> bude na Blanensku nakonec nejlépe
-        odpovídat tomu, že se do nich promítá především celostátní politika.
-        Postupuje tedy Jaromíra Vítková z nejsilnějšího vládního uskupení SPOLU
-        a Antonín Žirovnický z nejsilnějšího opozičního subjektu ANO 2011. Druhé
-        kolo voleb proběhne v pátek 30. září a v sobotu 1. října. Jaromíra
+        <b>Senátní volby</b> skončily velmi suverénní obhajobou mandátu
+        dosavadní senátorky Jaromíry Vítkové (SPOLU). Získala víc než 65 procent
+        hlasů, její soupeř Antonín Žirovnický z hnutí ANO pouze necelých 35
+        procent. Účast lehce přesáhla 20 procent voličů. Druhé kolo na Blanensku
+        nakonec nejlépe odpovídalo tomu, že se do nich promítla celostátní
+        politika. Postupila do něj kandidátka z nejsilnějšího vládního uskupení
+        a zástupce nejsilnějšího opozičního subjektu. V prvním kole Jaromíra
         Vítková získala v prvním kole cca 30 procent hlasů, Antonín Žirovnický
         18 procent. Sčítání hlasů neprobíhalo nijak dramaticky, oba postupující
         vedli prakticky od sečtení prvních okrsků.
