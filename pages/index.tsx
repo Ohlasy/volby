@@ -92,7 +92,6 @@ const MunicipalityResults = () => (
     <div className="p-5 bg-[#eee]">
       <iframe
         title="Celkové výsledky voleb"
-        aria-label="TBD"
         src="https://datawrapper.dwcdn.net/u4hJ6/1/"
         scrolling="no"
         width="100%"
@@ -102,7 +101,6 @@ const MunicipalityResults = () => (
     <div className="p-5 bg-[#eee]">
       <iframe
         title="Získané mandáty"
-        aria-label="TBD"
         src="https://datawrapper.dwcdn.net/edUX2/2/"
         scrolling="no"
         width="100%"
@@ -128,9 +126,8 @@ const SenateResults = () => (
     </div>
     <div className="p-5 bg-[#eee] lg:col-span-2">
       <iframe
-        title="Celkové výsledky voleb"
-        aria-label="TBD"
-        src="https://datawrapper.dwcdn.net/74oyd/2/"
+        title="Výsledky senátních voleb"
+        src="https://datawrapper.dwcdn.net/74oyd/5/"
         scrolling="no"
         width="100%"
         height="300"
