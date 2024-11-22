@@ -1,5 +1,9 @@
 {
-  "github": {
-    "silent": true
-  }
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://ohlasy.info/clanky/?tag=volby+2022",
+      "statusCode": 301
+    }
+  ]
 }
