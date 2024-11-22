@@ -32,7 +32,7 @@ export const decodeArticle = record({
 //
 
 export async function getAllArticles(): Promise<Article[]> {
-  return await fetch("https://ohlasy.info/assets/articles.js")
+  return await fetch("https://ohlasy.info/api/articles/")
     .then((response) => response.json())
     .then(array(decodeArticle));
 }
